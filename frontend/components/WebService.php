@@ -88,33 +88,6 @@
 			$result = $this->execute();
 			return $result;
 		}
-
-
-		public function validarUsuario($model)
-		{
-			$this->params=array();
-			$this->params['funcion']="validarUsuario";
-			$this->params['usuario_login']=$model->username;
-			$this->params['usuario_password']=$model->password;
-			$this->setUrl($this->urlCaravanas."usuarios.php");
-			$this->setParams();
-			$result=$this->execute();
-			if($result['status']=='Error') { throw new Exception(__METHOD__.": ".$result['message'], 1); }
-			if($result['data']==0) { throw new Exception("Usuari i/o Paraula de pas incorrectes.", 1); }
-			return TRUE;
-		}
-
-		public function getMarcas()
-		{
-			$this->params=array();
-			$this->params['funcion']="getMarcas";
-			$this->setURL($this->urlCaravanas."marcas.php");
-			$this->setParams();
-			$result=$this->execute();
-			if($result['status']=='Error') { throw new Exception(__METHOD__.": ".$result['message'], 1); }
-			return $result;
-		}
-
 	}
 
 ?>

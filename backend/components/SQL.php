@@ -7,11 +7,6 @@
 
 		public function __construct()
 		{
-			$this->PDO=new PDO(
-				'mysql:host=sanraalaws.c0k7njza4vyz.eu-west-1.rds.amazonaws.com;dbname=cosmospace',
-				'sanraal',
-				'Jaupiftl1975!'
-			);
 		}
 		
         public function queryAll($sql,$echo=FALSE)
